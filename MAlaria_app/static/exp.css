@@ -1,0 +1,81 @@
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Navigation Styling */
+nav {
+  background-color: #333;
+  color: #FFF;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+/* Header Styling */
+header {
+  background-color: #FFF;
+  text-align: center;
+  padding: 50px 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+/* Section Styling */
+section {
+  margin: 50px 0;
+}
+
+/* Form Styling */
+form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #444;
+}

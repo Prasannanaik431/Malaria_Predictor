@@ -1,0 +1,94 @@
+{% extends 'main.html' %}
+{% block content %}
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(500)
+                        .height(500);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+<div class="row"  style="margin-bottom: 300px;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <center><h1>Malaria Predictor</h1></center>
+
+
+        <div class="container">
+  <p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      About Page
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" align='left'>
+      A simple Deep neural network model trained on real world cell images of Malaria Parasite. <br>
+      By tapping below you can upload any image under choose image condition below.<br><br>
+      Output by clicking on "Submit" button:
+      <ul>
+
+      </ul>
+    </div>
+  </div>
+        <div class="card card-body">
+            <center><h3>Please upload the image of the cell</h3></center>
+            <form class="form-horizontal" action="{{ url_for('malariapredictPage') }}" method="POST" enctype="multipart/form-data">
+                <center>
+
+
+    <img src="../static/upload5.png" width="10%">
+
+<br>
+                <input onchange="readURL(this);" type="file" name="image" placeholder="Upload Image">
+                <br>
+                <br>
+                <img class="img-fluid" id="blah" src="#" alt="UPLOADED IMAGE WILL APPEAR HERE" />
+                <br>
+                    <br>
+                      <div class="container">
+      <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+      <label class="form-check-label" for="exampleCheck1">Make sure you uploaded images related to <strong>Malaria Blood cell</strong></label>
+    </div>
+
+    </div>
+                    <br>
+                <br>
+                <input class="btn btn-info" type="submit">
+                </center>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<br>
+
+<div class="container">
+
+  <div class="jumbotron" >
+
+
+    <hr class="my-4">
+
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+{% endblock %}
